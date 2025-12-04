@@ -1,8 +1,6 @@
 package com.example.eduread.ui.adapter
 
 import android.content.Context
-import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,11 +31,12 @@ class CardAdapter(
         val context: Context = holder.itemView.context
         val imageName = cuento.image
         val imageNameWithoutExtension = imageName.substringBeforeLast(".")
-        val imageResId = context.resources.getIdentifier(imageNameWithoutExtension, "drawable", context.packageName)
+        val resourceName = "img${cuento.image}"
+        val imageResId = context.resources.getIdentifier(resourceName, "drawable", context.packageName)
         if (imageResId != 0) {
             holder.imageView.setImageResource(imageResId)
         } else {
-            holder.imageView.setImageResource(R.drawable.img00)
+            holder.imageView.setImageResource(R.drawable.img2)
         }
         holder.titleTextView.text = cuento.title
         val starsCount = cuento.estrella

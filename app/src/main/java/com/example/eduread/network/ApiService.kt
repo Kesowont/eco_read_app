@@ -25,6 +25,6 @@ interface ApiService {
     fun listarCuentos(@Path("id_usuario") id_usuario: Int): Call<CuentosResponse>
     @POST("responder_service/v1/responder")
     fun RespuestaPreguntasCuento(@Body testRequest: ResponderRequest): Call<ResponderResponse>
-    @GET("cuento_service/v1/cuento/preguntas/{id_cuento}")
+    @GET("preguntas_service/v1/cuento/preguntas/{id_cuento}")
     fun obtenerPreguntas(@Path("id_cuento") idCuento: Int): Call<PreguntasResponse>
 }

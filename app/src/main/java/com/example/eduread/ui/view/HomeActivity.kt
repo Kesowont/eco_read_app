@@ -44,6 +44,13 @@ class HomeActivity : AppCompatActivity() {
             intent.putExtra("usuario_id", userId)//Agregué
             startActivity(intent)//intent2 ->intent
         }
+
+        val btnChatBot: Button = findViewById(R.id.buttonChatBot)
+        btnChatBot.setOnClickListener {
+            val intent = Intent(this, ChatBotActivity::class.java)
+            startActivity(intent)
+        }
+
         val btnCerrarSeccion: Button = findViewById(R.id.buttonCerrarSesion)
         btnCerrarSeccion.setOnClickListener(){
             val intent3 : Intent = Intent(this,MainActivity:: class.java)

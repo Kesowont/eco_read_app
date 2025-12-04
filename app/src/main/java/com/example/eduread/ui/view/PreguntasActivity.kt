@@ -75,6 +75,7 @@ class PreguntasActivity : AppCompatActivity() {
 
         val arrayRespuestas = respuestasSeleccionadas.values.joinToString(",")
         val userId = intent.getIntExtra("usuario_id", -1)//Agregué
+        Log.d("PreguntasActivity", "Recibido → cuento_id=$idCuento, usuario_id=$userId, respuestas=$arrayRespuestas")
 
         // Llamar al repositorio para enviar las respuestas
         val cuentoRepository = CuentoRepository()
@@ -89,7 +90,7 @@ class PreguntasActivity : AppCompatActivity() {
                 val intent10 : Intent = Intent(this, CuentosActivity:: class.java)
                 startActivity((intent10))
             } else {
-                Toast.makeText(this, "Error al enviar las respuestas.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Error al enviar las respuestas. ${response?.status}", Toast.LENGTH_SHORT).show()
             }
         }
 

@@ -30,7 +30,7 @@ class LecturaActivity : AppCompatActivity() {
             // Obtener datos enviados desde CuentosActivity
             val cardTitle = intent.getStringExtra("card_title") ?: "Título no encontrado"
             val cardText = intent.getStringExtra("card_text") ?: "Texto no encontrado"
-            val cardImageName = intent.getStringExtra("card_image") ?: "img00.jpg"
+            val cardImageName = intent.getStringExtra("card_image") ?: "img0.jpg"
 
             // Configurar contenido
             findViewById<TextView>(R.id.detail_title).text = cardTitle
@@ -43,7 +43,7 @@ class LecturaActivity : AppCompatActivity() {
             if (imageResId != 0) {
                 imageView.setImageResource(imageResId)
             } else {
-                imageView.setImageResource(R.drawable.img00)
+                imageView.setImageResource(R.drawable.img2)
             }
             ColorExtractor.extractColors(imageView) { colors ->
                 toolbar.setBackgroundColor(colors.darkVibrantColor)
@@ -64,18 +64,22 @@ class LecturaActivity : AppCompatActivity() {
                         window.decorView.systemUiVisibility and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
                 }
             }
-            val btnPregunta: Button = findViewById(R.id.buttonPregunta)
-            btnPregunta.setOnClickListener(){
-                val cuentoId = intent.getIntExtra("cuento_id", -1)//Agregué
-                val userId = intent.getIntExtra("usuario_id", -1)//Agregué
-                val intent = Intent(this, PreguntasActivity::class.java).apply {
-                    putExtra("cuento_id", cuentoId)//Agregué
-                    putExtra("usuario_id", userId)//Agregué
-                }
-                startActivity(intent)
-            }
+
         } catch (e: Exception) {
             e.printStackTrace()
+        }
+
+        val btnPregunta: Button = findViewById(R.id.buttonPregunta)
+        btnPregunta.setOnClickListener {
+            val cuentoId = intent.getIntExtra("cuento_id", -1)
+            val userId = intent.getIntExtra("usuario_id", -1)
+
+            val intent = Intent(this, PreguntasActivity::class.java).apply {
+                putExtra("cuento_id", cuentoId)
+                putExtra("usuario_id", userId)
+            }
+
+            startActivity(intent)
         }
     }
 }

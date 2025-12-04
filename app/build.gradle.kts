@@ -49,4 +49,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.recyclerview)
     implementation(libs.palette)
+    implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
 }

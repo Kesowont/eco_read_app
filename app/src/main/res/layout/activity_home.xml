@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Bienvenido a Edu Read, tu escape a la fantasía"
+        android:text="Bienvenido a Eco Read"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -104,6 +104,21 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewSubtitulo"
         app:layout_constraintVertical_bias="0.231" />
 
+    <!-- Agregado el 15/11/2025 -->
+
+    <Button
+        android:id="@+id/buttonChatBot"
+        android:layout_width="321dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#3F51B5"
+        android:textSize="25sp"
+        android:text="Chatbot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintTop_toBottomOf="@id/buttonCuentos" />
+
     <Button
         android:id="@+id/buttonCerrarSesion"
         android:layout_width="321dp"
@@ -116,6 +131,6 @@
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonCuentos"
-        app:layout_constraintVertical_bias="0.212" />
+        app:layout_constraintVertical_bias="0.635" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
