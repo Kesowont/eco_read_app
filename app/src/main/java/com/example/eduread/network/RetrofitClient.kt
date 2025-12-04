@@ -6,7 +6,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 
 object RetrofitClient {
-    private const val BASE_URL = "http://192.168.1.6:8000/"
+    private const val BASE_URL = "https://eco-read-backend.onrender.com/"
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
